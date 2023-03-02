@@ -293,9 +293,8 @@ $loop->addPeriodicTimer( 3.0, function( $timer ) use( $loop, $http, $get_next_ur
 	foreach ( $checkers as $i => $checker ) {
 		if ( $checker->is_done() ) {
 	//		echo "-\n";
+			unset( $checkers[ $i ] );
 		}
-
-		unset( $checkers[ $i ] );
 	}
 
 	if ( defined( 'NO_MORE' ) ) {
